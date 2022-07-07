@@ -1,0 +1,51 @@
+
+.img-bg{
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.224)), url('https://img.freepik.com/fotos-gratis/horta-verde-vista-aerea_213438-3489.jpg?w=2000');
+    min-height: 100%;
+    
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  
+  }
+  .equipe{
+    background: rgba(0, 24, 10, 0.461);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 50px 0px;
+    background-blend-mode:darken;
+    color: white;
+  
+  }
+  
+  .nome{
+    color: rgb(11, 218, 11);
+    border-bottom: solid rgb(3, 144, 3);
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+  .marginCol{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .fa-linkedin-in {
+    color:white !important
+  }
+  .fa{
+    font-size: 30pt;
+    color: white;
+    padding: 10px;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+}
