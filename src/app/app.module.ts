@@ -12,6 +12,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { EquipeComponent } from './equipe/equipe.component';
+import { CadastrarProdutoComponent } from './cadastrar/cadastrar-produto/cadastrar-produto.component';
+import { CadastrarCategoriaComponent } from './cadastrar/cadastrar-categoria/cadastrar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { EquipeComponent } from './equipe/equipe.component';
     EntrarComponent,
     InicioComponent,
     EquipeComponent,
+    CadastrarProdutoComponent,
+    CadastrarCategoriaComponent,
   ],
   imports: [
     BrowserModule,
