@@ -15,20 +15,23 @@
                 <div class="form-group">
                 
                     <label for="">Foto</label>
-                    <input class="form-control" type="text">
+                    <input  class="form-control" type="text">
                 </div>
                 <div class="form-group">
                     <label for="">Valor</label>
-                    <input class="form-control" type="text">
+                    <input  class="form-control" type="text">
                 </div>
                 <div class="form-group">
                     <label for="">Categoria ou <a routerLink="/cadastrarCategoria">criar uma nova</a></label>
                     <select class="form-control" name="" id="">
-                        <option *ngFor="let cat of listaCategorias" value="{{cat.tipo}}">{{cat.tipo}}</option>
+                        <option *ngFor="let cat of listaCategorias" value="{{cat.id}}">{{cat.tipo}}</option>
+                        
                     </select>
 
 
+
                 </div>
+                
                 
                 <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-success">Enviar</button>
