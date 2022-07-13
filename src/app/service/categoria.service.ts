@@ -28,11 +28,11 @@ export class CategoriaService {
   }
 
   postCategoria(categoria: Categoria): Observable<Categoria> {
-    return this.http.post<Categoria>('https://sustentatech.herokuapp.com/categorias', Categoria, this.token)
+    return this.http.post<Categoria>('https://sustentatech.herokuapp.com/categorias', categoria, this.token)
   }
 
   putCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('https://sustentatech.herokuapp.com/categorias', Categoria, this.token)
+    return this.http.put<Categoria>('https://sustentatech.herokuapp.com/categorias', categoria, this.token)
   }
 
   deleteCategoria(id: number) {
