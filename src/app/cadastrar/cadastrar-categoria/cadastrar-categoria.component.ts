@@ -25,7 +25,7 @@ export class CadastrarCategoriaComponent implements OnInit {
     if (environment.token == '')
       this.router.navigate(['/entrar'])
 
-    this.findAllCategorias
+    this.findAllCategorias()
 
 
   }
@@ -47,5 +47,14 @@ export class CadastrarCategoriaComponent implements OnInit {
     alert('Categoria Cadastrada com sucesso!')
 
 
+  }
+
+  cadastrarCategoria(){
+    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
+      this.categoria = resp;
+      alert('Tema criado com sucesso!');
+      this.findAllCategorias()
+      this.categoria = new Categoria();
+    });
   }
 }

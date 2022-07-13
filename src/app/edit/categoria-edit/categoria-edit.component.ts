@@ -48,7 +48,7 @@ this.findByIdCategoria(id)
       this.categoria = resp
       alert( 'Categoria atualizada')
 
-      this.router.navigate(['/cadastrar-categoria'])
+      this.router.navigate(['/cadastrarCategoria'])
     })
 
   }

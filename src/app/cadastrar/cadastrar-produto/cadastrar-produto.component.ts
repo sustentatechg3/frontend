@@ -45,13 +45,13 @@ export class CadastrarProdutoComponent implements OnInit {
 
   findByIdUsuario(){
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
-      this.usuario = resp;
+      this.usuario = resp
     })
   }
 
   findByIdCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
-      this.categoria = resp;
+      this.categoria = resp
     })
   }
 
@@ -64,7 +64,7 @@ export class CadastrarProdutoComponent implements OnInit {
 
   findAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
-      this.listaProdutos = resp;
+      this.listaProdutos = resp
     })
   }
 
