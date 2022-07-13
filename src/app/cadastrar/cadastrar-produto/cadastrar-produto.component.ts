@@ -40,6 +40,7 @@ export class CadastrarProdutoComponent implements OnInit {
       this.router.navigate(['/entrar'])
 
     this.findAllCategorias()
+    this.findAllProdutos()
 
   }
 
@@ -72,7 +73,7 @@ export class CadastrarProdutoComponent implements OnInit {
   
 
   cadastrar() {
-    this.categoria.id = 2/*this.idCategoria*/;
+    this.categoria.id = this.idCategoria;
     this.produto.categoria = this.categoria;
 
     this.usuario.id = this.idUsuario;
