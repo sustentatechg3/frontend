@@ -14,6 +14,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { CadastrarProdutoComponent } from './cadastrar/cadastrar-produto/cadastrar-produto.component';
 import { CadastrarCategoriaComponent } from './cadastrar/cadastrar-categoria/cadastrar-categoria.component';
+import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
+import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { CadastrarCategoriaComponent } from './cadastrar/cadastrar-categoria/cad
     EquipeComponent,
     CadastrarProdutoComponent,
     CadastrarCategoriaComponent,
+    CategoriaEditComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent,
+    CategoriaDeleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,24 +1,80 @@
 <div class="conteiner">
     <div class="row d-flex justify-content-center">
         <div class="col-md-4">
-            
-    
-                <div class="form-group">
-                    <label for="">Tipo</label>
-                    <input [(ngModel)]="categoria.tipo" class="form-control" type="text">
-                    <small></small>
-                </div>
-                <div class="form-group">
-                    <label for="">Descrição</label>
-                    <input [(ngModel)]="categoria.descricao" class="form-control" type="text">
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button  class="btn btn-danger mr-3" routerLink="/cadastrarProduto" >Cancelar</button>
-                    <button type="submit" class="btn btn-success"  (click)="cadastrar()">Enviar</button>
-                </div>
-                
 
+
+            <div class="form-group">
+                <label for="">Tipo</label>
+                <input [(ngModel)]="categoria.tipo" class="form-control" type="text">
+                <small></small>
+            </div>
+            <div class="form-group">
+                <label for="">Descrição</label>
+                <input [(ngModel)]="categoria.descricao" class="form-control" type="text">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-danger mr-3" routerLink="/inicio">Cancelar</button>
+                <button type="submit" class="btn btn-success" (click)="cadastrar()">Enviar</button>
+
+                <a routerLink="/categoria-edit/:id">Editar</a>
+
+
+
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col" class="text-right">Modificações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of listaCategorias">
+                                <th>{{i.id}}</th>
+                                <td>{{i.descricao}}</td>
+                                <td class="d-flex justify-content-end">
+                                    <button class="btn btn-info mr-3"
+                                        [routerLink]="['/tema-edit', i.id]">Editar</button>
+                                    <button class="btn btn-danger" [routerLink]="['/tema-delete', i.id]">Apagar</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col" class="text-right">Modificações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let i of listaCategorias">
+                        <th>{{i.id}}</th>
+                        <td>{{i.tipo}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn btn-info mr-3" [routerLink]="['/categoria-edit', i.id]" >Editar</button>
+                            <button class="btn btn-danger" [routerLink]="['/categoria-delete', i.id]" >Apagar</button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+      
+                </div>
         </div>
     </div>
-</div>
-
