@@ -93,15 +93,40 @@
       <!-- card dos produtos -->
       <div class="row">
         <!-- itens responsivos cada item ocupa em colunas = xl- 2 col | lg- 3 col ... -->
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-          <div class="card text-center bg-light">
-            <img src="" class="card-img-top">
+        <div class="col-md-2 align-text-start">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, fugit praesentium? Quo, ab rerum illo maiores quaerat repudiandae. Perspiciatis magnam, itaque unde autem ut harum beatae nulla a optio nihil? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi commodi unde natus, earum reprehenderit molestias deserunt ipsum quod harum dolore accusantium corrupti facilis veniam officia labore eos quas esse?</p>
+        </div>
+        <h2>Frutas</h2>
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch "
+          *ngFor="let card of listaCategorias[3].produto">
+          <div class="card text-center bg-light my-2">
+            <img src="{{card.foto}}" class="card-img-top">
             <div class="card-header">
-              R$:8,99
+
             </div>
             <div class="card-body">
-              <h5 class="card-title"> Tomate</h5>
-              <p class="card-text plimitelinhas31">Tomates vermelhos frescos</p>
+              <h5 class="card-title">{{card.nome}}</h5>
+              <p class="card-text plimitelinhas31">{{card.descricao}}</p>
+            </div>
+            <div class="card-footer">
+              <form class="d-block">
+                <button class="btn btn-success">Adicionar ao carrinho</button>
+                <small>*Limitada à 1Kg por compra</small>
+              </form>
+            </div>
+          </div>
+        </div>
+        <h2>Legumes</h2>
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch"
+          *ngFor="let card of listaCategorias[3].produto">
+          <div class="card text-center bg-light my-2">
+            <img src="{{card.foto}}" class="card-img-top">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{card.nome}}</h5>
+              <p class="card-text plimitelinhas31">{{card.descricao}}</p>
             </div>
             <div class="card-footer">
               <form class="d-block">
@@ -117,26 +142,26 @@
         <div class="col-12">
 
           <!-- botoes de pagina -->
-          
-            <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-              <form class="ml-3 d-inline-block">
-                <select class="custom-select ">
-                  <option value="">Ordenar pelo nome</option>
-                  <option value="">Ordenar pelo maior preço</option>
-                  <option value="">Ordenar pelo menor preço</option>
-                </select>
-              </form>
-              <nav class="d-inline-block">
-                <ul class="pagination pagination-sm my-0">
-                  <li class="page-item">
-                    <button class="page-link">1</button>
-                    <button class="page-link">2</button>
-                    <button class="page-link">3</button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          
+
+          <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+            <form class="ml-3 d-inline-block">
+              <select class="custom-select ">
+                <option value="">Ordenar pelo nome</option>
+                <option value="">Ordenar pelo maior preço</option>
+                <option value="">Ordenar pelo menor preço</option>
+              </select>
+            </form>
+            <nav class="d-inline-block">
+              <ul class="pagination pagination-sm my-0">
+                <li class="page-item">
+                  <button class="page-link">1</button>
+                  <button class="page-link">2</button>
+                  <button class="page-link">3</button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
         </div>
       </div>
     </div>
