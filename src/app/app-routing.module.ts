@@ -10,6 +10,7 @@ import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.com
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { EquipeComponent } from './equipe/equipe.component';
+import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
@@ -28,7 +29,9 @@ const routes: Routes = [
   { path: 'categoria-edit/:id', component: CategoriaEditComponent },
   { path: 'categoria-delete/:id', component: CategoriaDeleteComponent },
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
-  { path: 'produto-delete/:id', component: ProdutoDeleteComponent }
+  { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
+  { path: 'header', component: HeaderComponent}
+
 
 ];
 
