@@ -19,7 +19,7 @@ export class ProdutoEditComponent implements OnInit {
   idProduto: number
   categoria: Categoria = new Categoria
   idCategoria: number
-
+ 
 
 
   constructor(
@@ -27,6 +27,7 @@ export class ProdutoEditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private categoriaService: CategoriaService
+
 
   ) { }
 
@@ -41,6 +42,9 @@ export class ProdutoEditComponent implements OnInit {
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
     this.findAllCategorias()
+    this.findByIdCategoria()
+
+
 
   }
 
@@ -63,14 +67,20 @@ export class ProdutoEditComponent implements OnInit {
     })
   }
 
+  // getSelected(valueBd: number): string {
+  //   return this.produto.categoria.id == valueBd ? ('value="' + valueBd + '" selected"') : ('value="' + valueBd + '"');
+  // }
+ 
 
 
   atualizar() {
+    this.categoria.id = this.idCategoria
+    this.produto.categoria = this.categoria;
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
+
       this.produto = resp
       alert('Produto atualizada')
-
-      this.router.navigate(['/cadastrarProduto'])
+      this.router.navigate(['/cadastrar-produto'])
     })
 
   }

@@ -43,7 +43,7 @@ export class CadastrarCategoriaComponent implements OnInit {
        this.findAllCategorias()
        this.categoria= new Categoria
     })
-    this.router.navigate(['/cadastrarProduto'])
+    this.router.navigate(['/cadastrar-produto'])
     alert('Categoria Cadastrada com sucesso!')
 
 

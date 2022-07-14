@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../model/Usuario';
-import { AuthService } from '../service/auth.service';
+import { Usuario } from '../../model/Usuario';
+import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
-  templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  templateUrl: './cadastrar-usuario.component.html',
+  styleUrls: ['./cadastrar-usuario.component.css']
 })
 export class CadastrarComponent implements OnInit {
 

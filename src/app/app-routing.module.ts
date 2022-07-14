@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarCategoriaComponent } from './cadastrar/cadastrar-categoria/cadastrar-categoria.component';
 import { CadastrarProdutoComponent } from './cadastrar/cadastrar-produto/cadastrar-produto.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { CadastrarComponent } from './cadastrar/cadastrar-usuario/cadastrar-usuario.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'equipe', component: EquipeComponent },
-  { path: 'cadastrarProduto', component: CadastrarProdutoComponent },
+  { path: 'cadastrar-produto', component: CadastrarProdutoComponent },
   { path: 'cadastrarCategoria', component: CadastrarCategoriaComponent },
   { path: 'categoria-edit/:id', component: CategoriaEditComponent },
   { path: 'categoria-delete/:id', component: CategoriaDeleteComponent },
