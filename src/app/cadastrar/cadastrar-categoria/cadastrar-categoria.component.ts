@@ -44,7 +44,7 @@ export class CadastrarCategoriaComponent implements OnInit {
        this.categoria= new Categoria
     })
     this.router.navigate(['/cadastrar-produto'])
-    alert('Categoria Cadastrada com sucesso!')
+    alert('Categoria cadastrada com sucesso!')
 
 
   }
@@ -52,7 +52,7 @@ export class CadastrarCategoriaComponent implements OnInit {
   cadastrarCategoria(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      alert('Tema criado com sucesso!');
+      alert('Categoria criada com sucesso!');
       this.findAllCategorias()
       this.categoria = new Categoria();
     });
