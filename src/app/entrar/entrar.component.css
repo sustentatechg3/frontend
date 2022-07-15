@@ -1,10 +1,49 @@
 
 #img-bg{
-    background-image: url('https://i.imgur.com/TkaDAJt.jpg');
+    background-image: url('https://i.imgur.com/wchCQXV.png');
 
-    min-height: 702px;
+    
+    
+    
+ }
 
+#bg-color{
+
+    background-color: #eeba7a;
+   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#bt-color{
+
+    background-color: #e76d47 !important;
+}
+
+#link-color{
+    color: #e76d47 !important;
+}
+
+
+.fonte-bt{
+
+    font-family: monospace;
+}
+
+.fonte{
+
+    font-family: monospace;
+}
+
+.p{
+    border: 1px solid transparent;
+     
+
+    background-color: wheat;
+    width: 500px;
+    height: 50%;
+    margin: 0 auto;
+       
+   
 }

@@ -33,7 +33,7 @@
 
             </div>
 
-            
+
 
 
             <div class="d-flex justify-content-end">
@@ -50,32 +50,50 @@
     <div class="row">
         <div class="col">
 
+            <div class="card">
+                <div class="card-body">
 
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Modificações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of listaProdutos">
-                        <td>{{item.nome}}</td>
-                        <td>{{item.descricao}}</td>
-                        <td>{{item.categoria.tipo}}</td>
-                        <td>{{item.valor}}</td>
-                        <td class="d-flex justify-content-end">
-                            <button class="btn btn-info mr-3"
-                                [routerLink]="['/produto-edit', item.id]">Editar</button>
-                            <button class="btn btn-danger" [routerLink]="['/produto-delete', item.id]">Apagar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <div>
+                        <thead>
+                            <table class="table table-hover">
+
+
+                                <tr>
+
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Valor</th>
+                                    <th scope="col">Modificações</th>
+                                </tr>
+                                <tbody>
+                                    <tr *ngFor="let item of listaProdutos">
+                                        <td>{{item.nome}}</td>
+                                        <td>{{item.descricao}}</td>
+                                        <td>{{item.categoria.tipo}}</td>
+                                        <td>{{item.valor}}</td>
+                                        <td class="d-flex justify-content-end">
+                                            <button class="btn btn-info mr-3"
+                                                [routerLink]="['/produto-edit', item.id]">Editar</button>
+                                            <button class="btn btn-danger"
+                                                [routerLink]="['/produto-delete', item.id]">Apagar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </thead>
+
+                        <div class="card-body">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+
         </div>
-    </div>
-
-</div>
