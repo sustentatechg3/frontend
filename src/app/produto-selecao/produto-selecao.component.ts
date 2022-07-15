@@ -12,8 +12,10 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./produto-selecao.component.css']
 })
 export class ProdutoSelecaoComponent implements OnInit {
+
   produto: Produto = new Produto();
   categoria: Categoria = new Categoria()
+  idProduto: number;
 
 
 
@@ -35,7 +37,7 @@ export class ProdutoSelecaoComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
-    // this.findAllCategorias()
+    this.idProduto = id;
 
   }
 
@@ -45,6 +47,7 @@ export class ProdutoSelecaoComponent implements OnInit {
     })
 
   }
+
 
   // findByIdCategoria() {
   //   this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {

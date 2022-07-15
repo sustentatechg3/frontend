@@ -15,6 +15,7 @@ export class UsuarioEditComponent implements OnInit {
   idUsuario: number;
   confirmeSenha: string;
   tipoUsuario: string;
+  
 
   constructor(
     private authService: AuthService,
@@ -39,13 +40,12 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   atualizar(){
-    alert('entrou no atualizar')
     // this.usuario.tipo = this.tipoUsuario;
 
     if(this.usuario.senha != this.confirmeSenha){
       alert('As senha estão diferentes!')
     } else {
-      this.authService.atualizar(this.usuario).subscribe((resp: Usuario) => {
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp;
         this.router.navigate(['/inicio'])
         alert('Usuario atualizado com sucesso! Faça o login novamente.')

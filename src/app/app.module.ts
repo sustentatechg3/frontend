@@ -23,6 +23,7 @@ import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.compo
 import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AuthService } from './service/auth.service';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AuthService } from './service/auth.service';
     HeaderComponent,
     ProdutoSelecaoComponent,
     UsuarioEditComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Produto } from './model/Produto';
 import { AuthService } from './service/auth.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
   title = 'projetoIntegradorFront';
+  lista: Produto[];
 
-  
+
   constructor(
     public auth: AuthService
   ) {

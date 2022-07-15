@@ -14,7 +14,7 @@ export class ProdutoService {
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
-  // https://sustentatech.herokuapp.com/Produtos
+  // https://sustentatech.herokuapp.com/produtos
   getAllProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>('https://sustentatech.herokuapp.com/produtos/all', this.token)
   }
