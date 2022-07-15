@@ -13,6 +13,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: 'categoria-delete/:id', component: CategoriaDeleteComponent },
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
-  { path: 'header', component: HeaderComponent}
+  { path: 'header', component: HeaderComponent},
+  {path: 'produto-selecao/:id', component: ProdutoSelecaoComponent}
 
 
 ];
