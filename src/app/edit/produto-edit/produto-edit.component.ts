@@ -19,6 +19,7 @@ export class ProdutoEditComponent implements OnInit {
   idProduto: number
   categoria: Categoria = new Categoria
   idCategoria: number
+  
  
 
 

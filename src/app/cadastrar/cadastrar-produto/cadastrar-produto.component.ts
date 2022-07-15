@@ -22,6 +22,7 @@ export class CadastrarProdutoComponent implements OnInit {
   idCategoria: number;
   categoria: Categoria = new Categoria();
   idUsuario = environment.id;
+  idFoto = environment.id;
   usuario: Usuario = new Usuario();
   
 
