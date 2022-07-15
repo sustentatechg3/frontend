@@ -32,9 +32,6 @@ export class CadastrarComponent implements OnInit {
   cadastrar(){
    //this.usuario.usuario = this.tipoUsuario
 
-    if (this.usuario.foto == null) 
-      this.usuario.foto = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
-
     if(this.usuario.senha != this.confirmarSenha){
       alert("As senhas estão incorretas.")
 
