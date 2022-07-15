@@ -1,6 +1,11 @@
-#img-bg {
 
-    background-color: #eeba7a;;
-    border-radius: 2%;
+.bt-enviar{
 
+    color:rgb(238, 166, 107)
 }
+
+.fonte {
+
+    font-family: monospace;
+}
+
