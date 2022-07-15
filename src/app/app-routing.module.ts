@@ -8,11 +8,13 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
+import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.component';
 import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'entrar', component: EntrarComponent },
   { path: 'cadastrar', component: CadastrarComponent },
   { path: 'menu', component: MenuComponent },
+  { path: 'navbar-navegacao', component: NavbarNavegacaoComponent },
   { path: 'rodape', component: RodapeComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'inicio', component: InicioComponent },
@@ -32,7 +35,8 @@ const routes: Routes = [
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
   { path: 'produto-delete/:id', component: ProdutoDeleteComponent },
   { path: 'header', component: HeaderComponent},
-  {path: 'produto-selecao/:id', component: ProdutoSelecaoComponent}
+  {path: 'produto-selecao/:id', component: ProdutoSelecaoComponent},
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent}
 
 
 ];

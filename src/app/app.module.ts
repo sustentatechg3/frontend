@@ -20,11 +20,15 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
 import { HeaderComponent } from './header/header.component';
 import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.component';
+import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    NavbarNavegacaoComponent,
     RodapeComponent,
     ContatoComponent,
     CadastrarComponent,
@@ -39,6 +43,7 @@ import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.compo
     CategoriaDeleteComponent,
     HeaderComponent,
     ProdutoSelecaoComponent,
+    UsuarioEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,4 +54,4 @@ import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.compo
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
