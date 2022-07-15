@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { Usuario } from '../model/Usuario';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -15,11 +16,12 @@ export class InicioComponent implements OnInit {
 
   listaProdutos: Produto[];
   listaCategorias: Categoria[];
+  usuario: Usuario;
   
   categoria: Categoria;
   listaFrutas: Produto[];
   descricao: string;
-
+  // lista
 
   constructor(
     private router: Router,
@@ -36,6 +38,7 @@ export class InicioComponent implements OnInit {
     this.findAllProdutos();
     this.findByDescricao();
     this.findAllCategoria();
+    alert(this.usuario.tipo);
 
 
   }

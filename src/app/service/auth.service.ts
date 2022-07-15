@@ -26,6 +26,11 @@ export class AuthService {
     return this.http.post<Usuario>('https://sustentatech.herokuapp.com/usuarios/cadastrar', usuario)
   }
 
+  atualizar(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>('https://sustentatech.herokuapp.com/usuarios/atualizar', usuario);
+
+  }
+
   logado(){
     let ok: boolean = false
 
@@ -34,6 +39,12 @@ export class AuthService {
     }
 
     return ok
+  }
+
+  deslogado(){
+    if(!this.logado())
+    return true;
+    return false;
   }
 
   getByIdUsuario(id: number): Observable<Usuario> {

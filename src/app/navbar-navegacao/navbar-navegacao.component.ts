@@ -14,6 +14,8 @@ export class NavbarNavegacaoComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
   idUsuario = environment.id;
+  foto = environment.foto;
+  nome = environment.nome;
   
   
 
@@ -24,6 +26,16 @@ export class NavbarNavegacaoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.findByIdUsuario();
+    this.validarFoto();
+  }
+
+
+  validarFoto() {
+
+    if (environment.foto == '') {
+      this.foto = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
+    }
   }
   
 
@@ -31,6 +43,14 @@ export class NavbarNavegacaoComponent implements OnInit {
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
+  }
+
+  sair() {
+    this.router.navigate(['/entrar'])
+    environment.token = '';
+    environment.nome = '';
+    environment.foto = '';
+    environment.id = 0;
   }
 
 }
