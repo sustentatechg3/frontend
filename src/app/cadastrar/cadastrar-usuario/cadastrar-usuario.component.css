@@ -1,5 +1,5 @@
-#img-bg {
-    background-image: url(https://i.imgur.com/0Eo4AvG.jpg);
+#b-bg {
+    background-image: url();
     min-height: 90vh;
     background-position: right;
     background-repeat: no-repeat;
@@ -10,22 +10,34 @@
 }
 
 
-
-
-
-
 button {
     color: hsl(120, 14%, 97%);
+
     font-weight: 800;
-    font-family: 'Raleway', sans-serif;
+    font-family: monospace;
     letter-spacing: 3px;
     padding: 10px 50px;
     margin-top: 20px;
     border: none;
-    border-radius: 80px;
-    box-shadow: 1px 2px 5px 1px rgba(19, 19, 19, 0.29);
-    
+    border-radius: 2%;
+
+
 
 }
 
+#b-bg {
+    background-image: url();
+    min-height: 90vh;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 50%, 27%, 23%;
+    background-color: #eeba7a;
+    border-radius: 2%;
 
+
+}
+
+#bt-color {
+
+    background-color: #e76d47 !important;
+}
