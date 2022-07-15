@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container-fluid">
 
   <div class="row d-flex justify-content-center mt-3 mb-5">
@@ -41,7 +42,7 @@
           <img src="../../assets/img/slides/slide01small.jpg" alt="" class="img-fluid d-block d-md-none">
         </div>
       </div>
-      <!-- botoes -->
+      <!-- botoes do carrosel -->
       <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon"></span>
         <span class="visually-hidden">Anterior</span>
@@ -51,13 +52,10 @@
         <span class="visually-hidden">Próximo</span>
       </a>
     </div>
-  </header>
-
-  <main class="mb-5 pb-5 mb-md-0">
 
     <div class="container">
       <div class="row mt-3">
-        <div class="col-12 col-md-5">
+        <div class="col-xl-6 col-md-5 col-sm-12">
           <!-- barra de pesquisa -->
           <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
             <div class="input-group input-group-sm">
@@ -67,8 +65,178 @@
           </form>
         </div>
 
-        <!-- botoes de pagina -->
-        <div class="col-12 col-md-5">
+        <!-- botoes de paginas -->
+        <div class="col-md-xl d-flex flex-row-reverse ml-5 justify-content-md-start mt-0">
+          <form class="ml-3 d-inline-block">
+            <select class="custom-select ">
+              <option value="">Ordenar pelo nome</option>
+              <option value="">Ordenar pelo maior preço</option>
+              <option value="">Ordenar pelo menor preço</option>
+            </select>
+          </form>
+          <nav class="d-inline-block">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+              <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
+                <button type="button" class="btn btn-secondary">1</button>
+                <button type="button" class="btn btn-secondary">2</button>
+                <button type="button" class="btn btn-secondary">3</button>
+                <button type="button" class="btn btn-secondary">4</button>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </header>
+
+  <main class="mb-5 pb-5 mb-md-0">
+
+    <div class="container">
+
+      <hr>
+
+
+      <!------- card produtos----- -->
+
+      <!-- card frutas -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Frutas</h1>
+        </div>
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaCategorias[2].produto">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor}}</p>
+
+                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- card frutas -->
+
+      <!-- card legumes -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Legumes</h1>
+        </div>
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaCategorias[2].produto">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor}}</p>
+
+                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- card legumes -->
+
+
+      <!-- ------banner horti fruti---------- -->
+
+      <div class="row">
+        <div class="col-12">
+          <!-- <h1>Promoções</h1> -->
+          <img class="card-img-top" src="../../assets/img/horti-fruti.jpg" alt="promoção" width="200px">
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- -------banner horti fruti--------- -->
+
+
+      <!-- card vegetais -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Vegetais</h1>
+        </div>
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaCategorias[2].produto">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor}}</p>
+
+                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- card vegetais -->
+
+      <!-- card Hortaliças -->
+      <div class="row">
+        <div class="col-12">
+          <h1>Hortaliças</h1>
+        </div>
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaCategorias[2].produto">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor}}</p>
+
+                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- card Hortaliças -->
+
+
+
+
+
+      <!-- ------------fim cards--------------- -->
+      <hr class="mt-3">
+      <div class="row pb-4">
+        <div class="col-12">
+
+          <!-- botoes de pagina -->
+
           <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
             <form class="ml-3 d-inline-block">
               <select class="custom-select ">
@@ -78,65 +246,17 @@
               </select>
             </form>
             <nav class="d-inline-block">
-              <ul class="pagination pagination-sm my-0">
-                <li class="page-item">
-                  <button class="page-link">1</button>
-                  <button class="page-link">2</button>
-                  <button class="page-link">3</button>
-                </li>
-              </ul>
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+                <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
+                  <button type="button" class="btn btn-secondary">1</button>
+                  <button type="button" class="btn btn-secondary">2</button>
+                  <button type="button" class="btn btn-secondary">3</button>
+                  <button type="button" class="btn btn-secondary">4</button>
+                </div>
+              </div>
             </nav>
           </div>
-        </div>
-      </div>
-      <hr>
-      <!-- card dos produtos -->
-      <div class="row">
-        <!-- itens responsivos cada item ocupa em colunas = xl- 2 col | lg- 3 col ... -->
-        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-          <div class="card text-center bg-light">
-            <img src="" class="card-img-top">
-            <div class="card-header">
-              R$:8,99
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"> Tomate</h5>
-              <p class="card-text plimitelinhas31">Tomates vermelhos frescos</p>
-            </div>
-            <div class="card-footer">
-              <form class="d-block">
-                <button class="btn btn-success">Adicionar ao carrinho</button>
-                <small>*Limitada à 1Kg por compra</small>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="mt-3">
-      <div class="row pb-4">
-        <div class="col-12">
 
-          <!-- botoes de pagina -->
-          
-            <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-              <form class="ml-3 d-inline-block">
-                <select class="custom-select ">
-                  <option value="">Ordenar pelo nome</option>
-                  <option value="">Ordenar pelo maior preço</option>
-                  <option value="">Ordenar pelo menor preço</option>
-                </select>
-              </form>
-              <nav class="d-inline-block">
-                <ul class="pagination pagination-sm my-0">
-                  <li class="page-item">
-                    <button class="page-link">1</button>
-                    <button class="page-link">2</button>
-                    <button class="page-link">3</button>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          
         </div>
       </div>
     </div>
