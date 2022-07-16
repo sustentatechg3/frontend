@@ -102,6 +102,23 @@
 
       <!------- card produtos----- -->
 
+      <!-- ------banner frutas---------- -->
+
+      <div class="row">
+        <div class="col-12">
+          <!-- <h1>Promoções</h1> -->
+          <img class="card-img-top" src="https://i.imgur.com/ZnW1fYT.png" alt="frutas" width="200px">
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- -------banner frutas--------- -->
+
       <!-- card frutas -->
       <div class="row">
         <div class="col-12">
@@ -112,21 +129,34 @@
           <div class="row">
             <div
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
-              *ngFor="let item of listaCategorias[2].produto">
+              *ngFor="let item of listaCategorias[0].produto">
               <div class="card-body">
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
                 <p class="card-text mt-3">{{item.valor}}</p>
 
-                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+                
               </div>
+              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 
         </div>
       </div>
       <!-- card frutas -->
+
+      <!-- ------banner legumes---------- -->
+
+      <div class="row">
+        <div class="col-12">
+          <!-- <h1>Promoções</h1> -->
+          <img class="card-img-top" src="https://i.imgur.com/1eCcYq0.png" alt="frutas" width="200px">
+        </div>
+      </div>
+      <!-- -------banner legumes--------- -->
+
+      
 
       <!-- card legumes -->
       <div class="row">
@@ -138,15 +168,16 @@
           <div class="row">
             <div
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
-              *ngFor="let item of listaCategorias[2].produto">
+              *ngFor="let item of listaCategorias[1].produto">
               <div class="card-body">
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
                 <p class="card-text mt-3">{{item.valor}}</p>
 
-                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+               
               </div>
+              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 
@@ -154,70 +185,72 @@
       </div>
       <!-- card legumes -->
 
-
-      <!-- ------banner horti fruti---------- -->
+      
+      <!-- ------banner saladas---------- -->
 
       <div class="row">
         <div class="col-12">
           <!-- <h1>Promoções</h1> -->
-          <img class="card-img-top" src="../../assets/img/horti-fruti.jpg" alt="promoção" width="200px">
+          <img class="card-img-top" src="https://i.imgur.com/NRe0ZH1.png" alt="frutas" width="200px">
         </div>
       </div>
 
+      <!-- -------banner saladas--------- -->
 
 
 
-
-
-
-      <!-- -------banner horti fruti--------- -->
-
-
-      <!-- card vegetais -->
+      <!-- card Saladas -->
       <div class="row">
         <div class="col-12">
-          <h1>Vegetais</h1>
+          <h1>Saladas</h1>
         </div>
         <div class="col">
 
           <div class="row">
             <div
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
-              *ngFor="let item of listaCategorias[2].produto">
+              *ngFor="let item of listaCategorias[3].produto">
               <div class="card-body">
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
                 <p class="card-text mt-3">{{item.valor}}</p>
 
-                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+               
               </div>
+              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
+            
           </div>
 
         </div>
       </div>
-      <!-- card vegetais -->
+      <!-- card saladas -->
 
-      <!-- card Hortaliças -->
+      
+
+      
+
+      <!-- card Temperos -->
       <div class="row">
         <div class="col-12">
-          <h1>Hortaliças</h1>
+          <h1>Temperos</h1>
         </div>
         <div class="col">
 
           <div class="row">
             <div
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
-              *ngFor="let item of listaCategorias[2].produto">
+              *ngFor="let item of listaCategorias[3].produto">
               <div class="card-body">
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
                 <p class="card-text mt-3">{{item.valor}}</p>
 
-                <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+                
               </div>
+              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 

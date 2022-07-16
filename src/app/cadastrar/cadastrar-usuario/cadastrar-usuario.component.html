@@ -10,7 +10,7 @@
                 </div>
             </div>
 
-<div class="container-fluid">
+            <div class="container-fluid">
 
                 <div class="row d-flex align-items-center">
                     <div class="col-md-12">
@@ -18,17 +18,17 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-4">
 
-            <h1 class="text-center  text-white fonte">Cadastrar</h1>
-                         
-            <hr>
+                                <h1 class="text-center  text-white fonte">Cadastrar</h1>
+
+                                <hr>
 
                                 <div class="card mt-3 mb-5">
                                     <div class="card-body">
-                            
-                            <h2 class="text-center text-black-50 fonte m-5 mb-2">Faça seu cadastro:</h2>
+
+                                        <h2 class="text-center text-black-50 fonte m-5 mb-2">Faça seu cadastro:</h2>
 
                                         <div class="form-group text-black-50 fonte">
-                                              <label for="Nome">Nome</label>
+                                            <label for="Nome">Nome</label>
                                             <input [(ngModel)]="usuario.nome" class="form-control" type="text"
                                                 name="Nome" id="Nome" placeholder="Seu Nome">
                                         </div>
@@ -56,20 +56,20 @@
 
                                         <div class="form-group text-black-50 fonte">
                                             <label for="foto">Insira o link da foto</label>
-                                            <input [(ngModel)]="usuario.foto" class="form-control" type="password"
+                                            <input [(ngModel)]="usuario.foto" class="form-control" type="text"
                                                 name="foto" id="foto" placeholder="foto">
                                         </div>
 
                                         <div class="form-group text-black-50 fonte">
-                                            
+
                                             <label for="tipo">Tipo de usuário</label>
-                                            <select  [(ngModel)]="usuario.tipo" class="form-control" name="tipo" id="tipo">
+                                            <select [(ngModel)]="usuario.tipo" class="form-control" name="tipo"
+                                                id="tipo">
                                                 <option>Selecione um tipo de usuário</option>
                                                 <option value="adm">Administrador</option>
                                                 <option value="comprador">Comprador</option>
-                                                <option value="ong">Ong
+                                                <option value="ong">Ong</option>
 
-                                                </option>
                                             </select>
 
 
@@ -80,7 +80,7 @@
                                             </div>
 
 
-                                           
+
                                         </div>
 
 
@@ -94,6 +94,6 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
-</div>        
+</div>

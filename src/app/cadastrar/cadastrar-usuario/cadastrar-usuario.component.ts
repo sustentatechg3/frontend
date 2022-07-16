@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/Usuario';
 import { AuthService } from '../../service/auth.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-cadastrar',
@@ -20,32 +21,46 @@ export class CadastrarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
   }
-  confirmSenha(event: any){
+  confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
   }
-   tipoUser(event: any){
-    this.tipoUsuario = event.target.value
-    
+  // tipoUser(event: any) {
+  //   this.tipoUsuario = event.target.value
+  // }
+  
+  cadastrar() {
+    alert('entrou no cadastrar')
+    // this.usuario.usuario = this.tipoUsuario
 
-    
-  }
-  cadastrar(){
-  this.usuario.usuario = this.tipoUsuario
-
-    if(this.usuario.senha != this.confirmarSenha){
+    if (this.usuario.senha != this.confirmarSenha) {
       alert("As senhas estão incorretas.")
 
 
-    } else{
-        this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
-          this.usuario = resp
-          this.router.navigate(['/entrar'])
-          alert("Usuário cadastrado com sucesso!")
-        })
+    } else {
+      alert('entrou no else')
+
+      if (this.usuario.foto == null)
+        this.usuario.foto = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'
+
+        alert(this.usuario.nome)
+        alert(this.usuario.usuario)
+        alert(this.usuario.senha)
+        alert(this.usuario.tipo)
+
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        alert('entrou no service')
+
+        this.usuario = resp
+        this.router.navigate(['/entrar'])
+        alert("Usuário cadastrado com sucesso!")
+      })
     }
   }
+
+
+
 
 }
