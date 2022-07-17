@@ -1,4 +1,3 @@
-
 #b-bg {
     background-image: url();
     min-height: 90vh;
@@ -7,13 +6,12 @@
     background-size: 50%, 27%, 23%;
     background-color: #eeba7a;;
     border-radius: 2%;
-
 }
 
 
 button {
     color: hsl(120, 14%, 97%);
-    
+
     font-weight: 800;
     font-family: monospace;
     letter-spacing: 3px;
@@ -21,9 +19,6 @@ button {
     margin-top: 20px;
     border: none;
     border-radius: 2%;
-    
-
-
 }
 
 #b-bg {
@@ -34,13 +29,9 @@ button {
     background-size: 50%, 27%, 23%;
     background-color: #eeba7a;
     border-radius: 2%;
-    
-
 }
 
 #bt-color {
 
     background-color: #e76d47 !important;
 }
-
-
