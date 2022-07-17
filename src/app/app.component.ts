@@ -9,7 +9,7 @@ import { AuthService } from './service/auth.service';
 })
 export class AppComponent {
   title = 'projetoIntegradorFront';
-  lista: Produto[];
+ 
 
 
   constructor(

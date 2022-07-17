@@ -39,6 +39,12 @@ export class ProdutoService {
     return this.http.delete(`https://sustentatech.herokuapp.com/produtos/${id}`, this.token)
   }
 
+
+  getAllProdutosByNome(nome: String): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`https://sustentatech.herokuapp.com/produtos/nome/${nome}`, this.token)
+  }
+
+
   
 
 

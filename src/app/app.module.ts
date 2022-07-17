@@ -24,6 +24,8 @@ import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.co
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { AuthService } from './service/auth.service';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { ProdutosBuscadosComponent } from './produtos-buscados/produtos-buscados.component';
+import { ArmazenarComponent } from './armazenar/armazenar.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     ProdutoSelecaoComponent,
     UsuarioEditComponent,
     CarrinhoComponent,
+    ProdutosBuscadosComponent,
+    ArmazenarComponent,
   ],
   imports: [
     BrowserModule,

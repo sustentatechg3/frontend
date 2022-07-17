@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArmazenarComponent } from './armazenar/armazenar.component';
 import { CadastrarCategoriaComponent } from './cadastrar/cadastrar-categoria/cadastrar-categoria.component';
 import { CadastrarProdutoComponent } from './cadastrar/cadastrar-produto/cadastrar-produto.component';
 import { CadastrarComponent } from './cadastrar/cadastrar-usuario/cadastrar-usuario.component';
@@ -17,7 +18,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.component';
 import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.component';
+import { ProdutosBuscadosComponent } from './produtos-buscados/produtos-buscados.component';
 import { RodapeComponent } from './rodape/rodape.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'entrar', pathMatch: 'full' },
@@ -30,7 +33,7 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'equipe', component: EquipeComponent },
   { path: 'cadastrar-produto', component: CadastrarProdutoComponent },
-  { path: 'cadastrarCategoria', component: CadastrarCategoriaComponent },
+  { path: 'cadastrar-categoria', component: CadastrarCategoriaComponent },
   { path: 'categoria-edit/:id', component: CategoriaEditComponent },
   { path: 'categoria-delete/:id', component: CategoriaDeleteComponent },
   { path: 'produto-edit/:id', component: ProdutoEditComponent },
@@ -38,7 +41,9 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent},
   {path: 'produto-selecao/:id', component: ProdutoSelecaoComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent},
-  {path: 'carrinho', component: CarrinhoComponent}
+  {path: 'carrinho', component: CarrinhoComponent},
+  {path: 'produtos-buscados/:nome', component: ProdutosBuscadosComponent},
+  {path: 'armazenar', component: ArmazenarComponent}
 
 
 ];

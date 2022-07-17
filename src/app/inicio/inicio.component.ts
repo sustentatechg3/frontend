@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { AppComponent } from '../app.component';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
@@ -21,16 +22,20 @@ export class InicioComponent implements OnInit {
   categoria: Categoria;
   listaFrutas: Produto[];
   descricao: string;
-  // lista
+  lista: Produto[]
+  nomeProdutoBuscado: string;
+  listaProdutosBuscados: Produto[];
 
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService
+    // private app: AppComponent
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
+    // alert(this.usuario.nome)
 
     if (environment.token == '')
       this.router.navigate(['/entrar'])
@@ -39,6 +44,11 @@ export class InicioComponent implements OnInit {
     this.findByDescricao();
     this.findAllCategoria();
     alert(this.usuario.tipo);
+    // this.lista = this.app.lista;
+    // this.lista.forEach(obj => {
+    //   alert(obj.nome);
+    // });
+    
 
 
   }
@@ -62,6 +72,12 @@ export class InicioComponent implements OnInit {
       this.listaCategorias = resp;
     })
   }
+
+  goProducts() {
+    this.router.navigate(['/produtos-buscados'], { queryParams: { order: 'popular' } });
+  }
+
+  
 
 
 

@@ -17,14 +17,16 @@ export class CadastrarProdutoComponent implements OnInit {
 
   listaCategorias: Categoria[];
   listaProdutos: Produto[];
+  listaUsuario: Usuario;
 
   produto: Produto = new Produto()
   idCategoria: number;
   categoria: Categoria = new Categoria();
-  idUsuario = environment.id;
-  idFoto = environment.id;
-  usuario: Usuario = new Usuario();
   
+  idFoto = environment.id;
+  idUsuario = environment.id;
+  usuario: Usuario = new Usuario();
+
 
   constructor(
     private router: Router,
@@ -42,17 +44,18 @@ export class CadastrarProdutoComponent implements OnInit {
 
     this.findAllCategorias()
     this.findAllProdutos()
+    this.produtosDoUsuario()
 
   }
 
-  findByIdUsuario(){
+  findByIdUsuario() {
     this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
 
-  findByIdCategoria(){
-    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) =>{
+  findByIdCategoria() {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria = resp
     })
   }
@@ -64,14 +67,20 @@ export class CadastrarProdutoComponent implements OnInit {
     })
   }
 
-  findAllProdutos(){
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) =>{
-      this.listaProdutos = resp
+  findAllProdutos() {
+    this.produtoService.getAllProdutos().subscribe((obj: Produto[]) => {
+      
+    })
+  }
+
+  produtosDoUsuario(){
+    this.authService.getByIdUsuario(this.idUsuario).subscribe((resp: Usuario)=> {
+      this.listaUsuario = resp
     })
   }
 
 
-  
+
 
   cadastrar() {
     this.categoria.id = this.idCategoria;
@@ -80,15 +89,17 @@ export class CadastrarProdutoComponent implements OnInit {
     this.usuario.id = this.idUsuario;
     this.produto.usuario = this.usuario;
 
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) =>{
+    this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
 
       alert('Produto cadastrado com sucesso!');
       this.produto = new Produto();
-      this.findAllProdutos();
+      // this.findAllProdutos();
+      this.produtosDoUsuario()
+      
     })
 
-    
+
   }
 
 

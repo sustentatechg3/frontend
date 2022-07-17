@@ -1,16 +1,12 @@
 <div class="container-fluid">
 
-  <div class="row d-flex justify-content-center mt-3 mb-5">
+  <!-- <div class="row d-flex justify-content-center mt-3 mb-5">
     <div class="col-md-6">
       <button type="button" class="btn btn-light  mr-3" routerLink="/cadastrar-produto">Novo
         Produto</button>
       <a class="btn btn-outline-light" href="#postagens">Ver Postagens</a>
-
-
     </div>
-
-
-  </div>
+  </div> -->
 
 
   <header class="container">
@@ -58,12 +54,12 @@
           <!-- barra de pesquisa -->
           <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" placeholder="Buscar produtos...">
-              <button class="btn btn-success">Buscar</button>
+              <input [(ngModel)]="nomeProdutoBuscado" type="text" class="form-control" placeholder="Buscar produtos...">
+              <button class="btn btn-success" (click)="goProducts()"  >Buscar</button>
             </div>
           </form>
         </div>
-
+        <!-- [routerLink]="['/produtos-buscados', nomeProdutoBuscado]" -->
         <!-- botoes de paginas -->
         <div class="col-md-xl d-flex flex-row-reverse ml-5 justify-content-md-start mt-0">
           <form class="ml-3 d-inline-block">
@@ -127,7 +123,7 @@
         <div class="col">
 
           <div class="row">
-            <div
+            <div 
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
               *ngFor="let item of listaCategorias[0].produto">
               <div class="card-body">
