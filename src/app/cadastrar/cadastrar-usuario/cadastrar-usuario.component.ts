@@ -32,7 +32,7 @@ export class CadastrarComponent implements OnInit {
   // }
   
   cadastrar() {
-    alert('entrou no cadastrar')
+    // alert('entrou no cadastrar')
     // this.usuario.usuario = this.tipoUsuario
 
     if (this.usuario.senha != this.confirmarSenha) {
@@ -40,7 +40,7 @@ export class CadastrarComponent implements OnInit {
 
 
     } else {
-      alert('entrou no else')
+      // alert('entrou no else')
 
       if (this.usuario.foto == null)
         this.usuario.foto = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'

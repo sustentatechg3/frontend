@@ -52,11 +52,11 @@
                                                     placeholder="Sua foto">
                                             </div>
 
-                                            <div class="form-group text-white">
+                                            <div class="form-group text-black-50 fonte">
                                                 <label for="tipo">Tipo de usuário</label>
                                                 <select [(ngModel)]="usuario.tipo" class="form-control" name="tipo" id="tipo">
                                                     <option>Selecione um tipo de usuário</option>
-                                                    <option value="adm">Administrador</option>
+                                                    <option *ngIf="usuario.tipo == 'adm'" value="adm">Administrador</option>
                                                     <option value="normal">Comprador</option>
                                                     <option value="ong">Ong
             

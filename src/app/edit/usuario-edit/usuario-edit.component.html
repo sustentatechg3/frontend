@@ -7,28 +7,31 @@
 
     <div class="row d-flex justify-content-center">
         <div class="col-md-10">
-            
+
             <div class="form-group">
                 <label for="nome">Nome</label>
                 <input [(ngModel)]='usuario.nome' class="form-control" type="text" id="nome" name="nome"
                     placeholder="nome...">
+                <small>Mín 5 caracteres</small>
             </div>
             <div class="form-group">
                 <label for="nome">Usuário</label>
-                <input [(ngModel)]="usuario.usuario" class="form-control" type="text" id="usuario"
-                    name="usuario" placeholder="usuario...">
-                <small>*seu melhor e-mail</small>
+                <input [(ngModel)]="usuario.usuario" class="form-control" type="text" id="usuario" name="usuario"
+                    placeholder="usuario...">
+                <small>*Troque seu e-mail</small>
             </div>
             <div class="form-group">
                 <label for="linkfoto">Link da Foto</label>
                 <input [(ngModel)]="usuario.foto" class="form-control" type="text" id="linkfoto" name="linkfoto"
                     placeholder="link...">
+                <small>Opcional</small>
             </div>
-            
+
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input (input)='confirmarSenha($event)' type="password" class="form-control" id="senha"
-                    name="senha" placeholder="senha...">
+                <input (input)='confirmarSenha($event)' type="password" class="form-control" id="senha" name="senha"
+                    placeholder="senha...">
+                <small>Mín 8 dígitos</small>
             </div>
             <div class="form-group">
                 <label for="senha">Confirmar Senha</label>

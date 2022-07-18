@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AppComponent } from '../app.component';
+import { CarrinhoComponent } from '../carrinho/carrinho.component';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
@@ -18,7 +19,7 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[];
   listaCategorias: Categoria[];
   usuario: Usuario;
-  
+
   categoria: Categoria;
   listaFrutas: Produto[];
   descricao: string;
@@ -26,11 +27,14 @@ export class InicioComponent implements OnInit {
   nomeProdutoBuscado: string;
   listaProdutosBuscados: Produto[];
 
+
+  // listaDeProdutosComprados: Produto[];
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
-    // private app: AppComponent
+    private categoriaService: CategoriaService,
+    // private listas: CarrinhoComponent
   ) { }
 
   ngOnInit() {
@@ -43,12 +47,14 @@ export class InicioComponent implements OnInit {
     this.findAllProdutos();
     this.findByDescricao();
     this.findAllCategoria();
-    alert(this.usuario.tipo);
+    // alert(this.usuario.tipo);
+
+
     // this.lista = this.app.lista;
     // this.lista.forEach(obj => {
     //   alert(obj.nome);
     // });
-    
+
 
 
   }
@@ -61,13 +67,13 @@ export class InicioComponent implements OnInit {
 
   // }
 
-  findByDescricao(){
+  findByDescricao() {
     this.produtoService.getByDescricao('frutas frescos').subscribe((res: any[]) => {
       this.listaFrutas = res;
     })
   }
 
-  findAllCategoria(){
+  findAllCategoria() {
     this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp;
     })
@@ -77,7 +83,7 @@ export class InicioComponent implements OnInit {
     this.router.navigate(['/produtos-buscados'], { queryParams: { order: 'popular' } });
   }
 
-  
+
 
 
 
@@ -87,4 +93,8 @@ export class InicioComponent implements OnInit {
       this.listaProdutos = resp;
     })
   }
+
+//   registraHistoricoUsuario(){
+//     this.usuario.produto = this.listaDeProdutosComprados;
+//   }
 }

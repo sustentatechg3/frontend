@@ -32,6 +32,10 @@ import { registerLocaleData } from '@angular/common';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, } from '@angular/core';
 
 
+registerLocaleData(ptBr);
+// **************************************************
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +67,12 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, } from '@angular/core';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' },
+    // *************************************************
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    // *************************************************
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
