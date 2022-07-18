@@ -128,7 +128,7 @@ export class CarrinhoComponent implements OnInit {
 
     // this.usuario.pro
     // alert('limpar')
-    alert('Compra realizada! \\n VocÊ acabou de contribuir para o crescimento de ONGs sustentáveis')
+    alert('Compra realizada! \n Você acabou de contribuir para o crescimento de ONGs sustentáveis')
 
   }
 
