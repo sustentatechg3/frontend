@@ -3,9 +3,11 @@ body {
 }
 
 
-#bt-color{
+#bt-color {
 
-    background-color: #e76d47 !important;
+    background-color:#92f027 !important;
+
+    
 }
 
 #bg-color {
@@ -23,7 +25,7 @@ body {
     background-position: right;
     background-repeat: no-repeat;
     background-size: 50%, 27%, 23%;
-    background-color: #eeba7a;
+    background-color: #c5f094;
     border-radius: 2%;
 
 }

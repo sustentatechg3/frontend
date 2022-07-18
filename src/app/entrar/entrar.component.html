@@ -1,51 +1,35 @@
-
 <div id="b-bg">
-
-
-
     <div class="container-fluid">
+
         <div class="row d-flex align-items-end">
             <div class="col-md-2">
-
-
-                <img src="https://i.imgur.com/t4HkTCh.png" width="150px" height="150px" alt="Logo da empresa">
-
+            <img src="https://i.imgur.com/t4HkTCh.png" width="150px" height="150px" alt="Logo da empresa">
             </div>
         </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4 ">
-                <h1 class="text-center  text-white fonte">Entrar</h1>
-                <hr>
-            </div>
-        </div>
-
 
         <div class="row d-flex align-items-center">
-            <div class="container mt-5 mb-5">
-                <div class="p">
-
-
-                    
-
-                    <div class="col-md-12">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-12">
+            <div class="col-md-12">
+                
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6">
                         
+                        <h1 class="text-center  text-white fonte">Entrar</h1>
+                        <hr>
 
-                        <h2 class="text-center m-5 mb-2 text-black-50 fonte">Faça seu login:</h2>
+                        <div class="card mt-3 mb-5">
+                            <div class="card-body">
 
+                                    <h2 class="text-center m-5 mb-2 text-black-50 fonte">Faça login:</h2>
 
-                                <div class="form-group text-black-50 ">
-                                    <label for="usuario">Usuário</label>
-                                    <input [(ngModel)]="usuarioLogin.usuario" class="form-control" type="text"
-                                        nome="usuario" id="usuario" placeholder="Seu usuário">
+                                <div class="form-group text-black-50 fonte">
+                                    <label for="usuario">Usuário:</label>
+                                    <input [(ngModel)]="usuarioLogin.usuario" class="form-control"       type="text" name="usuario" id="usuario"  placeholder="Seu Usuário">              
                                 </div>
 
-
-                                <div class="form-group text-black-50">
-                                    <label for="usuario">Senha</label>
-                                    <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password"
-                                        nome="senha" id="senha" placeholder="Sua senha">
+                                <div class="form-group text-black-50 fonte">
+                                    <label for="senha">Senha:</label>
+                                    <input [(ngModel)]="usuarioLogin.senha" class="form-control" type="password" name="senha" id="senha"
+                                        placeholder="Sua senha">
                                 </div>
 
                                 <div class="text-center">
@@ -60,13 +44,22 @@
                                 </p>
 
 
+
                             </div>
                         </div>
+
+                    
                     </div>
                 </div>
+            
             </div>
-
-
         </div>
+
+
+
+
+
     </div>
+
 </div>
+
