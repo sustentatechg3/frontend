@@ -87,3 +87,14 @@ p {
 .fa-linkedin-square:hover{
     color: rgb(4, 108, 199)
 }
+
+.b-bg {
+  background-image: url();
+  min-height: 90vh;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 50%, 27%, 23%;
+  background-color: #c5f094;
+  border-radius: 2%;
+
+}

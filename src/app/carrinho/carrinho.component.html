@@ -37,10 +37,10 @@
                     </div>
 
                     <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
-                        <h3 class="mb-2 fonte">R$ {{item.valor}}</h3>
+                        <h3 class="mb-2 fonte">R$ {{item.valor | currency}}</h3>
 
 
-                        <button class="btn btn-danger mr-3"  (click)="removerProduto(p)">Remover |{{p}}</button>
+                        <button class="btn btn-danger mr-3"  (click)="removerProduto(p)">Remover</button>
                        
 
                     </div>

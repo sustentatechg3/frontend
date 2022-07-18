@@ -45,7 +45,7 @@ export class CarrinhoComponent implements OnInit {
   // constructor(a: boolean)
 
   ngOnInit(){
-    // CarrinhoComponent.limpar();
+    
     // if (environment.token == '')
     //   this.router.navigate(['/entrar'])
     // this.findByIdUsuario();

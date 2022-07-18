@@ -19,11 +19,12 @@ import { MenuComponent } from './menu/menu.component';
 import { NavbarNavegacaoComponent } from './navbar-navegacao/navbar-navegacao.component';
 import { ProdutoSelecaoComponent } from './produto-selecao/produto-selecao.component';
 import { ProdutosBuscadosComponent } from './produtos-buscados/produtos-buscados.component';
+import { RecepcaoComponent } from './recepcao/recepcao.component';
 import { RodapeComponent } from './rodape/rodape.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'entrar', pathMatch: 'full' },
+  { path: '', redirectTo: 'recepcao', pathMatch: 'full' },
   { path: 'entrar', component: EntrarComponent },
   { path: 'cadastrar', component: CadastrarComponent },
   { path: 'menu', component: MenuComponent },
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path: 'usuario-edit/:id', component: UsuarioEditComponent},
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'produtos-buscados/:nome', component: ProdutosBuscadosComponent},
-  {path: 'armazenar', component: ArmazenarComponent}
+  {path: 'armazenar', component: ArmazenarComponent},
+  {path: 'recepcao', component: RecepcaoComponent}
 
 
 ];
