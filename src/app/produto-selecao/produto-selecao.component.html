@@ -1,31 +1,43 @@
-<p>produto-selecao works!</p>
-
 <div class="container">
-    <div class="row">
-        <div class="col-12">
+    <div class="row mt-5">
+        <div class="card col-12 text-center justify-content-center m-1 my-5">
             <h1>Vegetais</h1>
         </div>
         <div class="col">
 
             <div class="row">
-                <div class="card col-6 text-center justify-content-center m-1 my-1">
+                <div class="card col-6 text-center justify-content-center m-1 my-5">
                     <div class="card-body">
                         <img class="card-img-top" src="{{produto.foto}}" alt="Card image cap">
 
                     </div>
-                    
+
                 </div>
                 <div class="col">
                     <h5 class="card-title m-0">{{produto.nome}}</h5>
                     <p class="card-text mt-3">{{produto.descricao}}</p>
                     <p class="card-text mt-3">{{produto.valor}}</p>
-                    <!-- <div >
-                        <label for="">Quantidade</label>
-                        <input type="number">x
-                    </div> -->
+                    <div>
+                        <label for="">Quantidade: </label>
+                        <input class="form-control ml-1" [(ngModel)]="quantidade" type="number" style="width: 75px;"
+                            min="1" max="99">
+                    </div>
 
-                    <button type="button" class="btn btn-danger btn-md"
-                        [routerLink]="['/produto-selecao', produto.id]">comprar</button>
+                    <div class="mt-2">
+                        <button type="button" class="btn btn-success btn-md"
+                            (click)="addAoCarrinho(produto.id, quantidade-1)">Adicionar
+                            ao carrinho</button>
+                    </div>
+                    <div class="mt-2">
+                        <button type="button " class="btn btn-danger btn-md" routerLink="/inicio">comprar mais
+                            produtos</button>
+                    </div>
+
+                    <div class="mt-2">
+                        <button type="button " class="btn btn-danger btn-md" routerLink="/carrinho">ir para o
+                            carrinho</button>
+                    </div>
+
                 </div>
             </div>
 

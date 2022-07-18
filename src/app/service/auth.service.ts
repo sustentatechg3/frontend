@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   atualizar(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://sustentatech.herokuapp.com/usuarios/atualizar', usuario);
+    return this.http.put<Usuario>('https://sustentatech.herokuapp.com/usuarios/atualizar', usuario);
 
   }
 
@@ -37,6 +37,7 @@ export class AuthService {
     if(environment.token != ''){
       ok = true
     }
+    
 
     return ok
   }
@@ -50,4 +51,6 @@ export class AuthService {
   getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`https://sustentatech.herokuapp.com/usuarios/${id}`, this.token)
   }
+
+  
 }

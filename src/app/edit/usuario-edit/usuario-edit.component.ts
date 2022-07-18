@@ -40,7 +40,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   atualizar(){
-    // this.usuario.tipo = this.tipoUsuario;
+    this.usuario.tipo = this.tipoUsuario;
 
     if(this.usuario.senha != this.confirmeSenha){
       alert('As senha estão diferentes!')
