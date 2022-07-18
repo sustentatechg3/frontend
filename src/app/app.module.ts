@@ -27,6 +27,17 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutosBuscadosComponent } from './produtos-buscados/produtos-buscados.component';
 import { ArmazenarComponent } from './armazenar/armazenar.component';
 
+
+// **************************************************
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID} from '@angular/core';
+
+// **************************************************
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { RecepcaoComponent } from './recepcao/recepcao.component';
+
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +46,7 @@ import { ArmazenarComponent } from './armazenar/armazenar.component';
     RodapeComponent,
     ContatoComponent,
     CadastrarComponent,
+    RecepcaoComponent,
     EntrarComponent,
     InicioComponent,
     EquipeComponent,
@@ -50,6 +62,7 @@ import { ArmazenarComponent } from './armazenar/armazenar.component';
     CarrinhoComponent,
     ProdutosBuscadosComponent,
     ArmazenarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +70,13 @@ import { ArmazenarComponent } from './armazenar/armazenar.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+
+    { provide: LOCALE_ID, useValue: 'pt' },
+    // *************************************************
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    // *************************************************
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

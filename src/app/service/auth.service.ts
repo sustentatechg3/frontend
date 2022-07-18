@@ -18,6 +18,8 @@ export class AuthService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  // https://sustentatech.herokuapp.com/usuarios
+  // http://localhost:8080/usuarios
   entrar (usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
     return this.http.post<UsuarioLogin>('https://sustentatech.herokuapp.com/usuarios/logar', usuarioLogin)
   }

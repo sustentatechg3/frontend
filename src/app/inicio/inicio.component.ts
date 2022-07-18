@@ -18,7 +18,7 @@ export class InicioComponent implements OnInit {
   listaProdutos: Produto[];
   listaCategorias: Categoria[];
   usuario: Usuario;
-  
+
   categoria: Categoria;
   listaFrutas: Produto[];
   descricao: string;
@@ -43,12 +43,12 @@ export class InicioComponent implements OnInit {
     this.findAllProdutos();
     this.findByDescricao();
     this.findAllCategoria();
-    alert(this.usuario.tipo);
+    // alert(this.usuario.tipo);
     // this.lista = this.app.lista;
     // this.lista.forEach(obj => {
     //   alert(obj.nome);
     // });
-    
+
 
 
   }
@@ -61,30 +61,24 @@ export class InicioComponent implements OnInit {
 
   // }
 
-  findByDescricao(){
+  findByDescricao() {
     this.produtoService.getByDescricao('frutas frescos').subscribe((res: any[]) => {
       this.listaFrutas = res;
     })
   }
 
-  findAllCategoria(){
+  findAllCategoria() {
     this.categoriaService.getAllCategorias().subscribe((resp: Categoria[]) => {
       this.listaCategorias = resp;
+    })
+  }
+  findAllProdutos() {
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
+      this.listaProdutos = resp;
     })
   }
 
   goProducts() {
     this.router.navigate(['/produtos-buscados'], { queryParams: { order: 'popular' } });
-  }
-
-  
-
-
-
-
-  findAllProdutos() {
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
-      this.listaProdutos = resp;
-    })
   }
 }

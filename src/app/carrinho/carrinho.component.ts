@@ -18,8 +18,8 @@ export class CarrinhoComponent implements OnInit {
   lista2: Produto[] = [];
   valorTotal: number = 0;
 
-  // idUsuario = environment.id;
-  // usuario: Usuario = new Usuario();
+  idUsuario = environment.id;
+  usuario: Usuario = new Usuario();
   // authService: AuthService;
 
 
@@ -34,8 +34,8 @@ export class CarrinhoComponent implements OnInit {
 
 
   constructor(
-    // private auth: AuthService,
-    // private router?: Router,
+    private router?: Router,
+    private authService?: AuthService,
     // private produtoService?: ProdutoService,
     // private categoriaService?: CategoriaService,
     
@@ -45,9 +45,8 @@ export class CarrinhoComponent implements OnInit {
   // constructor(a: boolean)
 
   ngOnInit(){
-    // CarrinhoComponent.limpar();
-    // if (environment.token == '')
-    //   this.router.navigate(['/entrar'])
+    if (environment.token == '')
+      this.router!.navigate(['/entrar'])
     // this.findByIdUsuario();
     // CarrinhoComponent.limpar();
     this.lista2 = CarrinhoComponent.listaDeProdutos;

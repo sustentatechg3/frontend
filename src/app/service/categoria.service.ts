@@ -15,6 +15,9 @@ export class CategoriaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  // https://sustentatech.herokuapp.com/categorias
+  // http://localhost:8080/
+
   getAllCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>('https://sustentatech.herokuapp.com/categorias', this.token)
   }

@@ -19,7 +19,7 @@ export class ProdutoSelecaoComponent implements OnInit {
   categoria: Categoria = new Categoria();
   idProduto: number;
   // public static listaDeProdutos: any[] = [];
-  carrinho: CarrinhoComponent = new CarrinhoComponent;
+  carrinho: CarrinhoComponent = new CarrinhoComponent();
   // carrinho: CarrinhoComponent = new CarrinhoComponent(this.auth);
   quantidade: number = 0;
 

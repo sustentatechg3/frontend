@@ -57,7 +57,7 @@
 <div class="container mb-5">
     <div class="row">
         <div class="col">
-            <h5>Valor Total a pagar: R${{valorTotal}},00 </h5>
+            <h5>Valor Total a pagar: {{valorTotal  | currency : 'BRL'}}</h5>
         </div>
         <div class="col">
             <button class="btn btn-info ml-2" routerLink="/inicio">Continuar comprando</button>

@@ -5,7 +5,9 @@
     text-overflow: ellipsis;
 } */
 
-
+.banner {
+    border-radius: 4%;
+}
 
 
 

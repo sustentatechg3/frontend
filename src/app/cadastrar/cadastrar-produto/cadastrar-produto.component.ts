@@ -30,9 +30,10 @@ export class CadastrarProdutoComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private authService: AuthService,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
-    private authService: AuthService
+    
 
   ) { }
 
