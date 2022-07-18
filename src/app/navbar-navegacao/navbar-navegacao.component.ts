@@ -46,11 +46,12 @@ export class NavbarNavegacaoComponent implements OnInit {
   }
 
   sair() {
-    this.router.navigate(['/entrar'])
+    
     environment.token = '';
     environment.nome = '';
     environment.foto = '';
     environment.id = 0;
+    this.router.navigate(['/recepcao'])
   }
 
 }

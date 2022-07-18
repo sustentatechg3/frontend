@@ -18,10 +18,15 @@ export class CarrinhoComponent implements OnInit {
   lista2: Produto[] = [];
   valorTotal: number = 0;
 
+  
+
   // idUsuario = environment.id;
   // usuario: Usuario = new Usuario();
   // authService: AuthService;
 
+  listaVendedores: Usuario[] = [];
+
+  reduced: Usuario[] = [];
 
 
 
@@ -38,25 +43,26 @@ export class CarrinhoComponent implements OnInit {
     // private router?: Router,
     // private produtoService?: ProdutoService,
     // private categoriaService?: CategoriaService,
-    
+
 
   ) { }
 
   // constructor(a: boolean)
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
     // if (environment.token == '')
     //   this.router.navigate(['/entrar'])
     // this.findByIdUsuario();
     // CarrinhoComponent.limpar();
     this.lista2 = CarrinhoComponent.listaDeProdutos;
-    
+
     // alert('atualliza lista2')
     this.atualizaCopiaDaLista();
     // alert('ler lista2')
     // this.ler();
     this.valorTotalPagar();
+    this.buscaVendedoresProdutos()
   }
 
   // findByIdUsuario() {
@@ -74,7 +80,7 @@ export class CarrinhoComponent implements OnInit {
     //   CarrinhoComponent.listaDeProdutos.pop(prods);
     // });
     CarrinhoComponent.listaDeProdutos = [];
-    
+
   }
 
   ler() {
@@ -82,7 +88,7 @@ export class CarrinhoComponent implements OnInit {
     this.lista2.forEach(p => {
       alert(p.nome)
     });
-    
+
 
     alert('sta list')
     CarrinhoComponent.listaDeProdutos.forEach(p => {
@@ -99,6 +105,7 @@ export class CarrinhoComponent implements OnInit {
     CarrinhoComponent.listaDeProdutos.splice(posicao)
     this.valorTotalPagar();
     this.atualizaCopiaDaLista();
+    this.buscaVendedoresProdutos();
   }
 
   valorTotalPagar() {
@@ -118,9 +125,31 @@ export class CarrinhoComponent implements OnInit {
     // })
     CarrinhoComponent.limpar();
     this.atualizaCopiaDaLista();
-    
+
+    // this.usuario.pro
     // alert('limpar')
-    alert('Compra realizada!')
+    alert('Compra realizada! \\n VocÊ acabou de contribuir para o crescimento de ONGs sustentáveis')
+
+  }
+
+  buscaVendedoresProdutos() {
+    // var reduced = [];
+
+    this.lista2.forEach(prod => {
+      this.listaVendedores.push(prod.usuario)
+    });
+
+    // filtrando vendedores repetidos
+    this.listaVendedores.forEach((item) => {
+      var duplicated = this.reduced.findIndex(redItem => {
+        return item.usuario == redItem.usuario;
+      }) > -1;
+
+      if (!duplicated) {
+        this.reduced.push(item);
+      }
+    });
+
 
   }
 
