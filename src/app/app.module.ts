@@ -26,6 +26,11 @@ import { AuthService } from './service/auth.service';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ProdutosBuscadosComponent } from './produtos-buscados/produtos-buscados.component';
 import { ArmazenarComponent } from './armazenar/armazenar.component';
+import { RecepcaoComponent } from './recepcao/recepcao.component';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, } from '@angular/core';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +55,7 @@ import { ArmazenarComponent } from './armazenar/armazenar.component';
     CarrinhoComponent,
     ProdutosBuscadosComponent,
     ArmazenarComponent,
+    RecepcaoComponent,
   ],
   imports: [
     BrowserModule,

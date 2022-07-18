@@ -4,44 +4,8 @@
     background-position: right;
     background-repeat: no-repeat;
     background-size: 50%, 27%, 23%;
-    background-color: #c5f094;
-    border-radius: 2%;
-
-
-}
-
-
-button {
-    color: hsl(120, 14%, 97%);
-
-    font-weight: 800;
-    font-family: monospace;
-    letter-spacing: 3px;
-    padding: 10px 50px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 2%;
-
-}
-
-
-
-
-#bt-color {
-
-    background-color:#92f027 !important;
-
-    
-}
-#b-bg {
-    background-image: url();
-    min-height: 90vh;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 50%, 27%, 23%;
     background-color: #eeba7a;;
     border-radius: 2%;
-
 }
 
 
@@ -55,9 +19,6 @@ button {
     margin-top: 20px;
     border: none;
     border-radius: 2%;
-
-
-
 }
 
 #b-bg {
@@ -68,14 +29,9 @@ button {
     background-size: 50%, 27%, 23%;
     background-color: #eeba7a;
     border-radius: 2%;
-
-
 }
 
+#bt-color {
 
-.fonte {
-
-
-    font-family: monospace;
-
+    background-color: #e76d47 !important;
 }
