@@ -1,8 +1,18 @@
 <div class="conteiner">
+    <div class="row">
+        <!-- <div *ngIf="usuario.tipo != 'adm' || usuario.tipo != 'normal'" class="col-2">
+            <div class="card text-left d-flex justify-content-start m-2">
+                <h6 class="m-2 ml-5">Incentivadores: 1 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                </h6>
+            </div>
+        </div> -->
+    </div>
     <div class="row d-flex justify-content-center">
+
         <div class="col-md-4 mt-4 mb-4">
 
-
+            <h2 class="text-center align-text-center justify-content-center my-5"><strong>Cadastre seus Produtos</strong>
+            </h2>
 
             <div class="form-group">
                 <label for="">Nome</label>
@@ -25,10 +35,12 @@
             <hr>
 
             <div class="form-group text-center">
-                <label for="">Categoria<a *ngIf="usuario.tipo == 'adm'" routerLink="/cadastrar-categoria">ou criar uma nova</a></label>
+                <label for="">Categoria<a *ngIf="usuario.tipo == 'adm'" routerLink="/cadastrar-categoria">ou criar uma
+                        nova</a></label>
                 <select [(ngModel)]="idCategoria" (change)="findByIdCategoria()" class="form-control ls-select
                 " name="categoria" id="categoria" placeholder="escolha...">
                     <option disabled selected>Selecione...</option>
+                    <!-- <option >atual: {{usu}}</option> -->
                     <option *ngFor="let cat of listaCategorias" value="{{cat.id}}">{{cat.tipo}}</option>
                 </select>
 
@@ -76,6 +88,7 @@
 <div class="container d-flex justify-content-center mt-5 mb-5">
 
     <div class="row d-flex justify-content-center">
+
         <div class="col-md-10 mb-4">
 
             <div class="card card-body">

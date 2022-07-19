@@ -27,6 +27,10 @@ export class CategoriaService {
     return this.http.get<Categoria[]>(`https://sustentatech.herokuapp.com/categorias/descricao/${descricao}`, this.token)
   }
 
+  getByTipoCategoria(tipo: string): Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(`https://sustentatech.herokuapp.com/categorias/tipo/${tipo}`, this.token)
+  }
+
   postCategoria(categoria: Categoria): Observable<Categoria> {
     return this.http.post<Categoria>('https://sustentatech.herokuapp.com/categorias', categoria, this.token)
   }

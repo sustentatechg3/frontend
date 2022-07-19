@@ -63,7 +63,7 @@
             <button class="btn btn-info ml-2" routerLink="/inicio">Continuar comprando</button>
         </div>
         <div class="col">
-            <button class="btn btn-success" (click)="compraRealizada()" routerLink="/inicio">Finalizar pedido</button>
+            <button class="btn btn-success" (click)="compraRealizada()" routerLink="/armazenar">Finalizar pedido</button>
         </div>
     </div>
 </div>
@@ -76,13 +76,17 @@
 
         
 
-        <div class="card col-2 text-center justify-content-center m-1 my-3" *ngFor="let vendedores of reduced">
+        <div class="card col-2 text-center justify-content-center m-1 my-3" *ngFor="let vendedores of listaVendedoresFiltrada">
             <div class="card-heade">
                 {{vendedores.nome}}
             </div>
             <div class=" card-body">
                 <img class="card-img-top" src="{{vendedores.foto}}" alt="Card image cap">
+                
 
+            </div>
+            <div class="mt-1 mb-1">
+                <button class="btn btn-info">Incentivar</button>
             </div>
 
         </div>

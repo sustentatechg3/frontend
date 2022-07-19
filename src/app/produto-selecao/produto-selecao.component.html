@@ -24,7 +24,7 @@
                             <input class="form-control ml-0" [(ngModel)]="quantidade" type="number" style="width: 75px;"
                                 min="1" max="99">
                         </div>
-    
+
                         <div class="mt-4 ml-3">
                             <button type="button" class="btn btn-success btn-md"
                                 (click)="addAoCarrinho(produto.id, quantidade-1)">Adicionar
@@ -51,15 +51,44 @@
 
                 </div>
             </div>
+            <div class="row">
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+                    *ngFor="let prod of listaProdutosSemelhantes">
+                    <div class="card-body">
+                        <!-- <img class="card-img-top" src="{{prod.foto}}" alt="Card image cap"> -->
+                        <h5 class="card-title m-0">{{prod.nome}}</h5>
+                        <!-- <p class="card-text mt-3">{{prod.descricao}}</p>
+                            <p class="card-text mt-3">{{prod.valor  | currency}}</p> -->
+                    </div>
+                    <button type="button" class="btn btn-danger btn-md"
+                        [routerLink]="['/produto-selecao', prod.id]">comprar</button>
+                </div>
+            </div>
+
+
 
         </div>
-
-
-
     </div>
-</div>
 
-<!-- <div class="container">
+    <!-- <div class="container">
     <div class="row">
         <div class="col-6">
             <h5>Ao comprar esse produto você estará ajudando: {{produto.usuario.nome}}</h5>

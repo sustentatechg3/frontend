@@ -44,6 +44,7 @@
                 <select [(ngModel)]="usuario.tipo" class="form-control" name="tipousuario" id="tipousuario"
                     (change)='tipoDeUsuario($event)'>
                     <option>selecione um tipo de usuário...</option>
+                    <!-- <option>atual: {{usuario.tipo}}</option> -->
                     <option value="adm">administrador</option>
                     <option value="normal">normal</option>
                     <option value="ong">Ong</option>

@@ -23,6 +23,11 @@ export class ProdutoService {
     return this.http.get<Produto>(`https://sustentatech.herokuapp.com/produtos/${id}`, this.token)
   }
 
+  getByNomeProduto(nome: string): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`https://sustentatech.herokuapp.com/produtos/nome/${nome}`, this.token)
+  }
+
+
   getByDescricao(descricao: string): Observable<Produto[]>{
     return this.http.get<Produto[]>(`https://sustentatech.herokuapp.com/produtos/descricao/${descricao}`, this.token)
   }
