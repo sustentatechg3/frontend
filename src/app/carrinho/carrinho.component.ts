@@ -162,6 +162,10 @@ export class CarrinhoComponent implements OnInit {
 
   }
 
+  // incentivar(){
+    
+  // }
+
   
 
 }
