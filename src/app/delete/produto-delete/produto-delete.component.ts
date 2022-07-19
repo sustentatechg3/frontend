@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -18,27 +19,32 @@ export class ProdutoDeleteComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça o login novamente.');
+      this.alertas.showAlertDanger('Sua sessão expirou, faça o login novamente.');
       this.router.navigate(['/entrar']);
     }
 
     this.idProduto = this.route.snapshot.params['id'];
     this.findByIdCategoria(this.idProduto);
+    // alert(this.produto.nome)
   }
 
   findByIdCategoria(id: number){
-    this.produto
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
+      this.produto = resp
+    })
+    // alert(this.produto)
   }
 
 
 apagar(){
   this.produtoService.deleteProduto(this.idProduto).subscribe(()=>{
-    alert('Produto apagado com sucesso!')
+    this.alertas.showAlertSuccess('Produto apagado com sucesso!')
     this.router.navigate(['/cadastrar-produto'])
   })
 }

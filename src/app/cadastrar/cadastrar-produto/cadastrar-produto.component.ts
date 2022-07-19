@@ -34,7 +34,7 @@ export class CadastrarProdutoComponent implements OnInit {
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
     private authService: AuthService,
-    private alerta: AlertasService
+    private alertas: AlertasService
 
   ) { }
 
@@ -94,7 +94,7 @@ export class CadastrarProdutoComponent implements OnInit {
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp;
 
-      this.alerta.showAlertSuccess('Produto cadastrado com sucesso!');
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!');
       this.produto = new Produto();
       // this.findAllProdutos();
       this.produtosDoUsuario()

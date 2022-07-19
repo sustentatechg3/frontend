@@ -60,10 +60,10 @@
             <h5 class="ml-2">Valor Total a pagar: {{valorTotal | currency}} </h5>
         </div>
         <div class="col">
-            <button class="btn btn-info ml-2" routerLink="/inicio">Continuar comprando</button>
+            <button class="btn btn-info ml-2" routerLink="/inicio">Continuar comprando <i class="fa fa-cart-plus" aria-hidden="true"></i></button>
         </div>
         <div class="col">
-            <button class="btn btn-success" (click)="compraRealizada()" routerLink="/armazenar">Finalizar pedido</button>
+            <button class="btn btn-success" (click)="compraRealizada()" routerLink="/inicio">Finalizar pedido <i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
         </div>
     </div>
 </div>
@@ -85,8 +85,11 @@
                 
 
             </div>
+            <div class="mt-1 mb-2">
+                <button  class="btn btn-info">Incentivar <i class="fa fa-smile-o" aria-hidden="true"></i></button>
+            </div>
             <div class="mt-1 mb-1">
-                <button class="btn btn-info">Incentivar</button>
+                <button class="btn btn-info">Doar <i class="fa fa-gratipay" aria-hidden="true"></i></button>
             </div>
 
         </div>

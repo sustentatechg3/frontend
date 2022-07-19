@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,7 +18,8 @@ export class CategoriaEditComponent implements OnInit {
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
 
@@ -25,7 +27,7 @@ export class CategoriaEditComponent implements OnInit {
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça o login novamente.');
+      this.alertas.showAlertDanger('Sua sessão expirou, faça o login novamente.');
       this.router.navigate(['/entrar']);
     }
 let id = this.route.snapshot.params['id']
@@ -46,7 +48,7 @@ this.findByIdCategoria(id)
   {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
-      alert( 'Categoria atualizada')
+      this.alertas.showAlertSuccess( 'Categoria atualizada')
 
       this.router.navigate(['/cadastrar-categoria'])
     })

@@ -115,7 +115,7 @@ export class InicioComponent implements OnInit {
   }
 
   findByNomeCategoria(nomeCategoriasBuscada: string){
-    alert('chamou')
+    // alert('chamou')
     // if(this.nomeCategoriasBuscada === ''){
     //   this.listaProdutosBuscados = [];
     // }
@@ -124,7 +124,7 @@ export class InicioComponent implements OnInit {
       this.listaCategoriasBotoes = resp;
     })
 
-    alert(this.listaCategoriasBotoes[0].produto)
+    // alert(this.listaCategoriasBotoes[0].produto)
 
     this.nomeCategoriasBuscadaAtiva = true
     
