@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { ArmazenarComponent } from '../armazenar/armazenar.component';
 import { Produto } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -18,7 +20,7 @@ export class CarrinhoComponent implements OnInit {
   lista2: Produto[] = [];
   valorTotal: number = 0;
 
-  
+
 
   // idUsuario = environment.id;
   // usuario: Usuario = new Usuario();
@@ -26,7 +28,9 @@ export class CarrinhoComponent implements OnInit {
 
   listaVendedores: Usuario[] = [];
 
-  reduced: Usuario[] = [];
+  listaVendedoresFiltrada: Usuario[] = [];
+
+  armazenar: ArmazenarComponent;
 
 
 
@@ -39,7 +43,7 @@ export class CarrinhoComponent implements OnInit {
 
 
   constructor(
-    // private auth: AuthService,
+    // private alertas: AlertasService,
     // private router?: Router,
     // private produtoService?: ProdutoService,
     // private categoriaService?: CategoriaService,
@@ -119,16 +123,23 @@ export class CarrinhoComponent implements OnInit {
   }
 
   compraRealizada() {
-    // this.lista2.forEach((prod: Produto)=>{
-    //   alert(this.usuario.nome + ' comprou ' + prod.nome)
-    //   this.usuario.produto.push(prod)
-    // })
-    CarrinhoComponent.limpar();
-    this.atualizaCopiaDaLista();
 
-    // this.usuario.pro
-    // alert('limpar')
-    alert('Compra realizada! \n Você acabou de contribuir para o crescimento de ONGs sustentáveis')
+
+    if (this.valorTotal == 0) {
+      alert('Adicione um produto ao carrinho primeiro!');
+    } else {
+      CarrinhoComponent.limpar();
+      this.atualizaCopiaDaLista();
+      // this.alertas.showAlertSuccess('Compra realizada! \n Você acabou de contribuir para o crescimento de ONGs sustentáveis')
+
+      ArmazenarComponent.listaDeProdutosComprados = this.lista2;
+
+      alert('Compra realizada! \n Você acabou de contribuir para o crescimento de ONGs sustentáveis')
+    }
+
+
+
+
 
   }
 
@@ -141,17 +152,22 @@ export class CarrinhoComponent implements OnInit {
 
     // filtrando vendedores repetidos
     this.listaVendedores.forEach((item) => {
-      var duplicated = this.reduced.findIndex(redItem => {
+      var duplicated = this.listaVendedoresFiltrada.findIndex(redItem => {
         return item.usuario == redItem.usuario;
       }) > -1;
 
       if (!duplicated) {
-        this.reduced.push(item);
+        this.listaVendedoresFiltrada.push(item);
       }
     });
 
 
   }
 
+  
 
 }
+
+
+
+

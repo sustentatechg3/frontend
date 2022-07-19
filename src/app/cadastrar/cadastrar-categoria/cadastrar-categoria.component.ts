@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -16,8 +17,9 @@ export class CadastrarCategoriaComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
-  ) { }
+    private categoriaService: CategoriaService,
+    private alerta: AlertasService
+  ){}
 
   ngOnInit() {
     window.scroll(0, 0)
@@ -44,7 +46,7 @@ export class CadastrarCategoriaComponent implements OnInit {
        this.categoria= new Categoria
     })
     this.router.navigate(['/cadastrar-produto'])
-    alert('Categoria cadastrada com sucesso!')
+    this.alerta.showAlertSuccess('Categoria cadastrada com sucesso!')
 
 
   }
@@ -52,7 +54,7 @@ export class CadastrarCategoriaComponent implements OnInit {
   cadastrarCategoria(){
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      alert('Categoria criada com sucesso!');
+      this.alerta.showAlertSuccess('Categoria criada com sucesso!');
       this.findAllCategorias()
       this.categoria = new Categoria();
     });

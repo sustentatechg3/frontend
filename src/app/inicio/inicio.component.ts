@@ -18,14 +18,20 @@ export class InicioComponent implements OnInit {
 
   listaProdutos: Produto[];
   listaCategorias: Categoria[];
+  nomeCategoriasBuscadaAtiva: boolean = false;
   usuario: Usuario;
+  listaCategoriasBotoes: Categoria[] = [];
+
 
   categoria: Categoria;
   listaFrutas: Produto[];
   descricao: string;
   lista: Produto[]
   nomeProdutoBuscado: string;
-  listaProdutosBuscados: Produto[];
+  listaProdutosBuscados: Produto[] = []
+  
+
+  // nomeProduto: string;
 
 
   // listaDeProdutosComprados: Produto[];
@@ -43,10 +49,11 @@ export class InicioComponent implements OnInit {
 
     if (environment.token == '')
       this.router.navigate(['/entrar'])
-
+    this.findByNomeProduto();
     this.findAllProdutos();
     this.findByDescricao();
     this.findAllCategoria();
+    
     // alert(this.usuario.tipo);
 
 
@@ -93,6 +100,42 @@ export class InicioComponent implements OnInit {
       this.listaProdutos = resp;
     })
   }
+  
+
+  findByNomeProduto(){
+    if(this.nomeProdutoBuscado === ''){
+      this.listaProdutosBuscados = [];
+    }
+
+    this.produtoService.getByNomeProduto(this.nomeProdutoBuscado).subscribe((resp: Produto[])=>{
+      this.listaProdutosBuscados = resp;
+    })
+    this.nomeProdutoBuscado == ''
+
+  }
+
+  findByNomeCategoria(nomeCategoriasBuscada: string){
+    alert('chamou')
+    // if(this.nomeCategoriasBuscada === ''){
+    //   this.listaProdutosBuscados = [];
+    // }
+
+    this.categoriaService.getByTipoCategoria(nomeCategoriasBuscada).subscribe((resp: Categoria[])=>{
+      this.listaCategoriasBotoes = resp;
+    })
+
+    alert(this.listaCategoriasBotoes[0].produto)
+
+    this.nomeCategoriasBuscadaAtiva = true
+    
+
+  }
+
+  LimparBotoes(){
+    this.nomeCategoriasBuscadaAtiva = false;
+
+  }
+
 
 //   registraHistoricoUsuario(){
 //     this.usuario.produto = this.listaDeProdutosComprados;

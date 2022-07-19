@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -30,6 +31,8 @@ import { RecepcaoComponent } from './recepcao/recepcao.component';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, } from '@angular/core';
+import { AlertaComponent } from './alerta/alerta.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 registerLocaleData(ptBr);
@@ -60,14 +63,21 @@ registerLocaleData(ptBr);
     ProdutosBuscadosComponent,
     ArmazenarComponent,
     RecepcaoComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule.forRoot(),
+    // OrderModule
+
   ],
   providers: [
+
+    // *************************************************
+    //formatar saída monetária R$
     { provide: LOCALE_ID, useValue: 'pt' },
     // *************************************************
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },

@@ -38,13 +38,13 @@ export class RecepcaoComponent implements OnInit {
         // environment.token = 'Basic c3VzdGVudGFAZW1haWwuY29tOjEyMzQ1Njc4';
         window.scroll(0, 0)
 
-        console.log(this.listaCategorias)
-        console.log(this.listaProdutos)
+        // console.log(this.listaCategorias)
+        // console.log(this.listaProdutos)
         this.findAllProdutos();
         // this.findByDescricao();
         this.findAllCategoria();
-        console.log(this.listaCategorias)
-        console.log(this.listaProdutos)
+        // console.log(this.listaCategorias)
+        // console.log(this.listaProdutos)
 
         // if (environment.token == '')
         //   this.router.navigate(['/entrar'])

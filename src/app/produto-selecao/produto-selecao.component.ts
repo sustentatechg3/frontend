@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { CarrinhoComponent } from '../carrinho/carrinho.component';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -18,7 +19,7 @@ export class ProdutoSelecaoComponent implements OnInit {
   produto: Produto = new Produto();
   categoria: Categoria = new Categoria();
   idProduto: number;
-  // public static listaDeProdutos: any[] = [];
+  listaProdutosSemelhantes: Produto[] = [];
   carrinho: CarrinhoComponent = new CarrinhoComponent;
   // carrinho: CarrinhoComponent = new CarrinhoComponent(this.auth);
   quantidade: number = 0;
@@ -33,7 +34,7 @@ export class ProdutoSelecaoComponent implements OnInit {
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    // private carrinho: CarrinhoComponent
+    private alestas: AlertasService
 
 
 
@@ -68,8 +69,8 @@ export class ProdutoSelecaoComponent implements OnInit {
       CarrinhoComponent.listaDeProdutos.push(this.produto);
     }
     // this.carrinho.atualizaCopiaDaLista();
-    if (quantidade+1 > 0)
-      alert(this.produto.nome + ' Adicionado(a)')
+    if (quantidade + 1 > 0)
+      this.alestas.showAlertSuccess(this.produto.nome + ' Adicionado(a)')
     // this.carrinho.ler();
 
   }
@@ -87,6 +88,14 @@ export class ProdutoSelecaoComponent implements OnInit {
   //   })
   // }
 
+  buscaProdutosSemelhanes() {
+    this.produtoService.getAllProdutos().subscribe((lista: Produto[]) => {
+      lista.forEach(prod => {
+        if (prod.categoria.tipo == this.produto.categoria.tipo)
+          this.listaProdutosSemelhantes.push(prod)
+      });
+    });
 
 
+  }
 }

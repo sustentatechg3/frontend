@@ -48,51 +48,125 @@
       </a>
     </div>
 
-    <div class="container">
+    <div class="container mb-0">
       <div class="row mt-3">
-        <div class="col-xl-6 col-md-5 col-sm-12">
-          <!-- barra de pesquisa -->
-          <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
-            <div class="input-group input-group-sm">
-              <input [(ngModel)]="nomeProdutoBuscado" type="text" class="form-control" placeholder="Buscar produtos...">
-              <button class="btn btn-success" (click)="goProducts()"  >Buscar</button>
-            </div>
-          </form>
-        </div>
-        <!-- [routerLink]="['/produtos-buscados', nomeProdutoBuscado]" -->
-        <!-- botoes de paginas -->
-        <div class="col-md-xl d-flex flex-row-reverse ml-5 justify-content-md-start mt-0">
-          <form class="ml-3 d-inline-block">
-            <select class="custom-select ">
-              <option value="">Ordenar pelo nome</option>
-              <option value="">Ordenar pelo maior preço</option>
-              <option value="">Ordenar pelo menor preço</option>
-            </select>
-          </form>
-          <nav class="d-inline-block">
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
-              <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
-                <button type="button" class="btn btn-secondary">1</button>
-                <button type="button" class="btn btn-secondary">2</button>
-                <button type="button" class="btn btn-secondary">3</button>
-                <button type="button" class="btn btn-secondary">4</button>
-              </div>
-            </div>
-          </nav>
-        </div>
+        <!-- <div class="col-xl-6 col-md-5 col-sm-12"> -->
+
+
+
+
 
 
       </div>
     </div>
 
+    <hr>
+    <!-- -- ------    barra de pesquisa ------ -->
+    <div class="row d-flex justify-content-center mt-2 mb-0">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input class="form-control" type="text" name="" id="titulo" placeholder="Digite um nome para pesquisar"
+            [(ngModel)]='nomeProdutoBuscado' (keyup)="findByNomeProduto()">
+        </div>
+        <!-- -- ------    barra de pesquisa ------ -->
+      </div>
+      <div class="col-md-xl d-flex flex-row-reverse ml-5 justify-content-md-start mt-0">
+        <form class="ml-3 d-inline-block">
+          <select class="custom-select ">
+            <option value="">Ordenar pelo nome</option>
+            <option value="">Ordenar pelo maior preço</option>
+            <option value="">Ordenar pelo menor preço</option>
+          </select>
+        </form>
+        <nav class="d-inline-block">
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+            <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
+              <button type="button" class="btn btn-secondary">1</button>
+              <button type="button" class="btn btn-secondary">2</button>
+              <button type="button" class="btn btn-secondary">3</button>
+              <button type="button" class="btn btn-secondary">4</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
 
+    <!-- botoes de paginas -->
 
   </header>
 
-  <main class="mb-5 pb-5 mb-md-0">
+  <main class="mb-0 pb-5 mb-md-0">
 
+
+
+
+
+    <!-- card pesquisa -->
     <div class="container">
+      <div class="row d-flex justify-content-center">
 
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaProdutosBuscados">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor | currency}}</p>
+
+
+              </div>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- card pesquisa -->
+
+
+
+    <!-- card botoes pesquisa -->
+<!-- 
+    <button class="btn btn-info" onclick="LimparBotoes()">Limpar</button>
+    <button class="btn btn-info" onclick="findByNomeCategoria('Frutas')">Frutas</button> -->
+
+    <div *ngIf="nomeCategoriasBuscadaAtiva" class="container">
+      <div class="row d-flex justify-content-center">
+
+        <div class="col">
+
+          <div class="row">
+            <div
+              class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
+              *ngFor="let item of listaCategoriasBotoes[0].produto">
+              <div class="card-body">
+                <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
+                <h5 class="card-title m-0">{{item.nome}}</h5>
+                <p class="card-text mt-3">{{item.descricao}}</p>
+                <p class="card-text mt-3">{{item.valor | currency}}</p>
+
+
+              </div>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- card botoes pesquisa -->
+
+
+    
+    <!-- && listaCategoriasBotoes.length === 0" -->
+    <div *ngIf="listaProdutosBuscados.length === 0" class="container">
       <hr>
 
 
@@ -116,25 +190,26 @@
       <!-- -------banner frutas--------- -->
 
       <!-- card frutas -->
-      <div class="row">
-        <div class="col-12">
+      <div class="row my-5">
+        <div class="col-12 my-5">
           <h1>Frutas</h1>
         </div>
         <div class="col">
 
           <div class="row">
-            <div 
+            <div
               class="card col-xl-2 col-lg-2 col-md-3 col-sm-12 d-flex align-items-strech text-center justify-content-center m-1 my-1"
               *ngFor="let item of listaCategorias[0].produto">
               <div class="card-body">
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
-                <p class="card-text mt-3">{{item.valor  | currency}}</p>
+                <p class="card-text mt-3">{{item.valor | currency}}</p>
 
-                
+
               </div>
-              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 
@@ -152,11 +227,11 @@
       </div>
       <!-- -------banner legumes--------- -->
 
-      
+
 
       <!-- card legumes -->
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 my-5">
           <h1>Legumes</h1>
         </div>
         <div class="col">
@@ -169,11 +244,12 @@
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
-                <p class="card-text mt-3">{{item.valor  | currency}}</p>
+                <p class="card-text mt-3">{{item.valor | currency}}</p>
 
-               
+
               </div>
-              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 
@@ -181,7 +257,7 @@
       </div>
       <!-- card legumes -->
 
-      
+
       <!-- ------banner saladas---------- -->
 
       <div class="row">
@@ -197,7 +273,7 @@
 
       <!-- card Saladas -->
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 my-5">
           <h1>Saladas</h1>
         </div>
         <div class="col">
@@ -210,26 +286,27 @@
                 <img class="card-img-top" src="{{item.foto}}" alt="Card image cap">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
                 <p class="card-text mt-3">{{item.descricao}}</p>
-                <p class="card-text mt-3">{{item.valor  | currency}}</p>
+                <p class="card-text mt-3">{{item.valor | currency}}</p>
 
-               
+
               </div>
-              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
-            
+
           </div>
 
         </div>
       </div>
       <!-- card saladas -->
 
-      
 
-      
+
+
 
       <!-- card Temperos -->
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 my-5">
           <h1>Temperos</h1>
         </div>
         <div class="col">
@@ -244,9 +321,10 @@
                 <p class="card-text mt-3">{{item.descricao}}</p>
                 <p class="card-text mt-3">{{item.valor | currency}}</p>
 
-                
+
               </div>
-              <button type="button" class="btn btn-danger btn-md" [routerLink]="['/produto-selecao', item.id]">comprar</button>
+              <button type="button" class="btn btn-danger btn-md"
+                [routerLink]="['/produto-selecao', item.id]">comprar</button>
             </div>
           </div>
 

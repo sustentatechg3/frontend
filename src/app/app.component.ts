@@ -13,7 +13,7 @@ export class AppComponent {
 
 
   constructor(
-    public auth: AuthService
+    public auth: AuthService,
   ) {
 
   }
