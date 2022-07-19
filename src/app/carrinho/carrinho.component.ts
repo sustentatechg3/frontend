@@ -124,6 +124,7 @@ export class CarrinhoComponent implements OnInit {
 
   compraRealizada() {
 
+
     if (this.valorTotal == 0) {
       alert('Adicione um produto ao carrinho primeiro!');
     } else {
@@ -135,6 +136,7 @@ export class CarrinhoComponent implements OnInit {
 
       alert('Compra realizada! \n Você acabou de contribuir para o crescimento de ONGs sustentáveis')
     }
+
 
 
 
